@@ -1,0 +1,204 @@
+
+[
+  {
+    "id": 1,
+    "fraud_name": "Phishing Link",
+    "category": "Online Fraud",
+    "channel": "SMS",
+    "how_it_works": "Fraudsters send fake links to steal personal or banking information.",
+    "warning_signs": "Unknown links and urgent messages.",
+    "precautions": "Do not click unknown links.",
+    "source_url": "https://website.rbi.org.in/web/rbi/rbi-kehta-hai/raju-and-forty-thieves"
+  },
+  {
+    "id": 2,
+    "fraud_name": "Vishing",
+    "category": "Online Fraud",
+    "channel": "Phone Call",
+    "how_it_works": "Fraudsters call pretending to be bank officials.",
+    "warning_signs": "Requests for OTP, PIN, or passwords.",
+    "precautions": "Never share OTP or PIN.",
+    "source_url": "https://website.rbi.org.in/web/rbi/rbi-kehta-hai/raju-and-forty-thieves"
+  },
+  {
+    "id": 3,
+    "fraud_name": "Online Marketplace Fraud",
+    "category": "Shopping Fraud",
+    "channel": "Online Marketplace",
+    "how_it_works": "Scammers offer fake products or request advance payments.",
+    "warning_signs": "Very low prices and suspicious sellers.",
+    "precautions": "Verify sellers and use trusted payment methods.",
+    "source_url": "https://website.rbi.org.in/web/rbi/rbi-kehta-hai/raju-and-forty-thieves"
+  },
+  {
+    "id": 4,
+    "fraud_name": "Card Fee Waiver Scam",
+    "category": "Banking Fraud",
+    "channel": "Phone Call",
+    "how_it_works": "Scammers promise credit card fee waivers to obtain banking details.",
+    "warning_signs": "Requests for card details or OTP.",
+    "precautions": "Contact your bank using its official number.",
+    "source_url": "https://website.rbi.org.in/web/rbi/rbi-kehta-hai/raju-and-forty-thieves"
+  },
+  {
+    "id": 5,
+    "fraud_name": "ATM Skimming",
+    "category": "Banking Fraud",
+    "channel": "ATM",
+    "how_it_works": "Fraudsters use devices to copy card information.",
+    "warning_signs": "Suspicious attachments or loose ATM parts.",
+    "precautions": "Inspect the ATM and cover your PIN.",
+    "source_url": "https://website.rbi.org.in/web/rbi/rbi-kehta-hai/raju-and-forty-thieves"
+  },
+  {
+    "id": 6,
+    "fraud_name": "Screen Sharing App Scam",
+    "category": "Banking Fraud",
+    "channel": "Mobile App",
+    "how_it_works": "Scammers convince victims to install screen-sharing applications.",
+    "warning_signs": "Requests to share your screen during banking.",
+    "precautions": "Never share your screen with unknown callers.",
+    "source_url": "https://website.rbi.org.in/web/rbi/rbi-kehta-hai/raju-and-forty-thieves"
+  },
+  {
+    "id": 7,
+    "fraud_name": "SIM Swap Fraud",
+    "category": "Identity Fraud",
+    "channel": "Mobile Network",
+    "how_it_works": "Fraudsters obtain a duplicate SIM to receive OTPs.",
+    "warning_signs": "Unexpected loss of mobile network.",
+    "precautions": "Contact your mobile operator immediately.",
+    "source_url": "https://website.rbi.org.in/web/rbi/rbi-kehta-hai/raju-and-forty-thieves"
+  },
+  {
+    "id": 8,
+    "fraud_name": "Fake Customer Care Number",
+    "category": "Online Fraud",
+    "channel": "Search Engine",
+    "how_it_works": "Scammers publish fake customer support numbers online.",
+    "warning_signs": "Unofficial contact numbers and payment requests.",
+    "precautions": "Use contact details from official websites.",
+    "source_url": "https://website.rbi.org.in/web/rbi/rbi-kehta-hai/raju-and-forty-thieves"
+  },
+  {
+    "id": 9,
+    "fraud_name": "QR Code Scam",
+    "category": "Payment Fraud",
+    "channel": "UPI",
+    "how_it_works": "Fraudsters trick victims into scanning QR codes to make payments.",
+    "warning_signs": "Requests to scan QR codes to receive money.",
+    "precautions": "You generally do not need to scan a QR code to receive money.",
+    "source_url": "https://website.rbi.org.in/web/rbi/rbi-kehta-hai/raju-and-forty-thieves"
+  },
+  {
+    "id": 10,
+    "fraud_name": "Social Media Impersonation",
+    "category": "Identity Fraud",
+    "channel": "Social Media",
+    "how_it_works": "Scammers create fake profiles using another person's identity.",
+    "warning_signs": "Duplicate accounts asking for money.",
+    "precautions": "Verify the person's identity before sending money.",
+    "source_url": "https://website.rbi.org.in/web/rbi/rbi-kehta-hai/raju-and-forty-thieves"
+  },
+  {
+    "id": 11,
+    "fraud_name": "Juice Jacking",
+    "category": "Mobile Fraud",
+    "channel": "Public USB Charging",
+    "how_it_works": "A compromised charging port may attempt data theft or malware installation.",
+    "warning_signs": "Unknown or untrusted USB charging stations.",
+    "precautions": "Use your own charger or a power bank.",
+    "source_url": "https://website.rbi.org.in/web/rbi/rbi-kehta-hai/raju-and-forty-thieves"
+  },
+  {
+    "id": 12,
+    "fraud_name": "Lottery Scam",
+    "category": "Online Fraud",
+    "channel": "SMS or Email",
+    "how_it_works": "Scammers claim that victims have won a lottery and demand fees.",
+    "warning_signs": "Unexpected prize messages and advance fee requests.",
+    "precautions": "Do not pay money to claim unknown prizes.",
+    "source_url": "https://website.rbi.org.in/web/rbi/rbi-kehta-hai/raju-and-forty-thieves"
+
+  },
+  {
+    "id": 13,
+    "fraud_name": "Online Job Fraud",
+    "category": "Employment Fraud",
+    "channel": "Job Website",
+    "how_it_works": "Fake recruiters demand registration or training fees.",
+    "warning_signs": "Guaranteed jobs with upfront payments.",
+    "precautions": "Verify the employer before paying any fee.",
+    "source_url": "https://website.rbi.org.in/web/rbi/rbi-kehta-hai/raju-and-forty-thieves"
+  },
+    {
+    "id": 14,
+    "fraud_name": "Fake Account Number",
+    "category": "Payment Fraud",
+    "channel": "In Person",
+    "how_it_works": "A fake agent at a stall collects insurance payment into a personal account.",
+    "warning_signs": "Payment asked into a personal account and no official receipt.",
+    "precautions": "Buy policies only from authorised offices and verify the account.",
+    "source_url": "https://website.rbi.org.in/web/rbi/rbi-kehta-hai/raju-and-forty-thieves"
+  },
+  {
+    "id": 15,
+    "fraud_name": "Fraud through Email",
+    "category": "Cybersecurity Fraud",
+    "channel": "Email",
+    "how_it_works": "A fake email asks you to click a link, open an attachment or send money.",
+    "warning_signs": "Odd sender address, urgent tone and unexpected attachments.",
+    "precautions": "Check the sender and do not open unknown attachments.",
+    "source_url": "https://website.rbi.org.in/web/rbi/rbi-kehta-hai/raju-and-forty-thieves"
+  },
+  {
+    "id": 16,
+    "fraud_name": "Message App Banking Fraud",
+    "category": "Banking Fraud",
+    "channel": "Messaging App",
+    "how_it_works": "A fraudster poses as the bank on a messaging app and collects your details.",
+    "warning_signs": "Unknown number claiming to be a bank and asking for codes.",
+    "precautions": "Banks do not handle banking requests on messaging apps. Block and report.",
+    "source_url": "https://website.rbi.org.in/web/rbi/rbi-kehta-hai/raju-and-forty-thieves"
+  },
+  {
+    "id": 17,
+    "fraud_name": "Fraudulent Loans with Stolen Documents",
+    "category": "Identity Fraud",
+    "channel": "Stolen Documents",
+    "how_it_works": "Your shared documents are misused to take a loan in your name.",
+    "warning_signs": "Recovery calls for a loan you never took.",
+    "precautions": "Share document copies carefully and check your credit report.",
+    "source_url": "https://website.rbi.org.in/web/rbi/rbi-kehta-hai/raju-and-forty-thieves"
+  },
+  {
+    "id": 18,
+    "fraud_name": "Betting Scam",
+    "category": "Financial Fraud",
+    "channel": "Website",
+    "how_it_works": "Betting sites promise quick gains, then demand more deposits and block withdrawals.",
+    "warning_signs": "Guaranteed returns and extra deposits needed to withdraw.",
+    "precautions": "Avoid unlicensed betting sites.",
+    "source_url": "https://website.rbi.org.in/web/rbi/rbi-kehta-hai/raju-and-forty-thieves"
+  },
+  {
+    "id": 19,
+    "fraud_name": "Fake Vaccination Call",
+    "category": "Online Fraud",
+    "channel": "Phone Call",
+    "how_it_works": "A caller offers a vaccine slot and asks for your OTP.",
+    "warning_signs": "Unexpected vaccination call asking for OTP.",
+    "precautions": "Register only on the official portal and never share OTP.",
+    "source_url": "https://website.rbi.org.in/web/rbi/rbi-kehta-hai/raju-and-forty-thieves"
+  },
+  {
+    "id": 20,
+    "fraud_name": "Covid Testing - Fake Online Site",
+    "category": "Online Fraud",
+    "channel": "Website",
+    "how_it_works": "A fake site takes payment and details for a test that never happens.",
+    "warning_signs": "Unknown site and payment asked through a link.",
+    "precautions": "Book only on official hospital or lab sites.",
+    "source_url": "https://website.rbi.org.in/web/rbi/rbi-kehta-hai/raju-and-forty-thieves"
+  }
+]
