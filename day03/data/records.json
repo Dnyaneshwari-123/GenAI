@@ -1,21 +1,12 @@
 [
     {
-        "fraud_name": "",
-        "channel": "Other",
-        "how_it_works": "adopted by fraudsters to defraud and mislead them, while also informing them about the",
-        "warning_signs": "",
-        "precautions": "to be taken while carrying out financial transactions. It emphasizes the need for keeping one's personal information, particularly the financial information, confidential at all times, be-ware of unknown calls / emails / messages, practicing due diligence while performing financial transactions and changing the secure credentials / passwords from time to time. Hence the title BE(A)WARE – Be Aware and Beware! This booklet is part of the public awareness initiative by the Consumer Ed ucation and Protection Department, Reserve Bank of India and has been conceptualized by the office of Ombudsman, Mumbai-II.",
-        "source_url": "https://rbidocs.rbi.org.in/rdocs/content/pdfs/BEAWARE07032022.pdf",
-        "id": 1
-    },
-    {
         "fraud_name": "Phishing links",
         "channel": "SMS/Link",
         "how_it_works": "Fraudsters create a third-party phishing website which looks like an existing genuine website, such as - a bank’s website or an e-commerce website or a search engine, etc. Links to these websites are circulated by fraudsters through Short Message Service (SMS) / social media / email / Instant Messenger, etc. Many customers click on the link without checking the detailed Uniform Resource Locator ( URL) and enter secure credentials such as Personal Identification Number ( PIN), One Time Password (OTP), Password, etc., which are captured and used by the fraudsters.",
         "warning_signs": "",
         "precautions": "Do not click on unknown / unverified links and immediately delete such SMS / email sent by unknown sender to avoid accessing them by mistake in future. Unsubscribe the mails providing links to a bank / e -commerce / search engine website and block the sender’s e-mail ID, before deleting such emails. Always go to the official website of your bank / service provider. Carefully verify the website details especially where it requires entering financial credentials. Check for the secure sign (https with a padlock symbol) on the website before entering secure credentials. Check URLs and domain names received in emails for spelling errors. In case of suspicion, inform the police. local police/cybercrime branch immediately.",
         "source_url": "https://rbidocs.rbi.org.in/rdocs/content/pdfs/BEAWARE07032022.pdf",
-        "id": 2
+        "id": 1
     },
     {
         "fraud_name": "Vishing calls",
@@ -24,7 +15,7 @@
         "warning_signs": "",
         "precautions": "Bank officials / financial institutions / RBI / any genuine entity never ask customers to share confidential information such as username / password / card details / CVV / OTP. Never share these confidential details with anyone , even your own family members, and friends.",
         "source_url": "https://rbidocs.rbi.org.in/rdocs/content/pdfs/BEAWARE07032022.pdf",
-        "id": 3
+        "id": 2
     },
     {
         "fraud_name": "Frauds using online sales platforms",
@@ -33,7 +24,7 @@
         "warning_signs": "",
         "precautions": "Always be careful when you are buying or selling products using online sales platforms. Always remember that there is no need to enter PIN / password anywhere to receive money. If UPI or any other app requires you to enter PIN to complete a transaction, it means you will be sending money instead of receiving it.",
         "source_url": "https://rbidocs.rbi.org.in/rdocs/content/pdfs/BEAWARE07032022.pdf",
-        "id": 4
+        "id": 3
     },
     {
         "fraud_name": "Frauds due to the use of unknown / unverified mobile apps",
@@ -42,7 +33,7 @@
         "warning_signs": "",
         "precautions": "Never download an application from any unverified / unknown sources or on being asked/ guided by an unknown person. As a prudent practice before downloading, check on the publishers / owners of the app being downloaded as well as its user ratings etc. While downloading an application, check the permission/s and the access to your data it seeks, such as contacts, photographs, etc. Only give those permissions which a re absolutely required to use the desired application.",
         "source_url": "https://rbidocs.rbi.org.in/rdocs/content/pdfs/BEAWARE07032022.pdf",
-        "id": 5
+        "id": 4
     },
     {
         "fraud_name": "ATM card skimming",
@@ -51,7 +42,7 @@
         "warning_signs": "",
         "precautions": "Always check that there is no extra device attached, near the card insertion slot or keypad of the ATM machine, before making a transaction. Cover the keypad with your other hand while entering the PIN. NEVER write the PIN on your ATM card. Do NOT enter the PIN in the presence of any other / unknown person standing close to you. Do NOT give your ATM card to anyone for withdrawal of cash. Do NOT follow the instructions given by any unknown person or take assistance / guidance from strangers / unknown persons at the ATMs. If cash is not dispensed at the ATM, press the ‘Cancel’ button and wait for the home screen to appear before leaving the ATM.",
         "source_url": "https://rbidocs.rbi.org.in/rdocs/content/pdfs/BEAWARE07032022.pdf",
-        "id": 6
+        "id": 5
     },
     {
         "fraud_name": "Frauds using screen sharing app / Remote access",
@@ -60,7 +51,7 @@
         "warning_signs": "",
         "precautions": "If your device faces any technical glitch and you need to download any screen sharing app, deactivate / log out of all payment related apps from your device. Download such apps only when you are advised through the official Toll-free number of the company as appearing in its official website . Do not download such apps in case an executive of the company contacts you through his / her personal contact number. As soon as the work is completed, ensure that the screen sharing app is removed from your device.",
         "source_url": "https://rbidocs.rbi.org.in/rdocs/content/pdfs/BEAWARE07032022.pdf",
-        "id": 7
+        "id": 6
     },
     {
         "fraud_name": "SIM swap / SIM cloning",
@@ -69,7 +60,7 @@
         "warning_signs": "",
         "precautions": "Never share identity credentials pertaining to your SIM card. Be watchful regarding mobile network access in your phone. If there is no mobile network in your phone for a considerable amount of time in a regular environment, immediately contact the mobile operator to ensure that no duplicate SIM is being / has been issued for your mobile number.",
         "source_url": "https://rbidocs.rbi.org.in/rdocs/content/pdfs/BEAWARE07032022.pdf",
-        "id": 8
+        "id": 7
     },
     {
         "fraud_name": "Frauds by compromising credentials on results through search engines",
@@ -78,7 +69,7 @@
         "warning_signs": "",
         "precautions": "Always obtain the customer care contact details from the official websites of banks / companies. Do not call the numbers directly displayed on the search engine results page as these are often camouflaged by fraudsters. Please also note that customer care numbers are never in the form of mobile numbers.",
         "source_url": "https://rbidocs.rbi.org.in/rdocs/content/pdfs/BEAWARE07032022.pdf",
-        "id": 9
+        "id": 8
     },
     {
         "fraud_name": "Scam through QR code scan",
@@ -87,7 +78,7 @@
         "warning_signs": "",
         "precautions": "Be cautious while scanning QR code/s using any payment app. QR codes have account details embedded in them to transfer money to a particular account. Never scan any QR code to receive money. Transactions involving receipt of money do not require scanning barcodes / QR codes or entering mobile banking PIN (m-PIN), passwords, etc.",
         "source_url": "https://rbidocs.rbi.org.in/rdocs/content/pdfs/BEAWARE07032022.pdf",
-        "id": 10
+        "id": 9
     },
     {
         "fraud_name": "Impersonation on social media",
@@ -96,7 +87,7 @@
         "warning_signs": "",
         "precautions": "Always verify the genuineness of a fund request from a friend / relative by confirming through a phone call / physical meeting to be sure that the profile is not impersonated. Do not make payments to unknown persons online. Do not share personal and confidential information on social media platforms.",
         "source_url": "https://rbidocs.rbi.org.in/rdocs/content/pdfs/BEAWARE07032022.pdf",
-        "id": 11
+        "id": 10
     },
     {
         "fraud_name": "Juice jacking",
@@ -105,7 +96,7 @@
         "warning_signs": "",
         "precautions": "Avoid using public / unknown charging ports / cables.",
         "source_url": "https://rbidocs.rbi.org.in/rdocs/content/pdfs/BEAWARE07032022.pdf",
-        "id": 12
+        "id": 11
     },
     {
         "fraud_name": "Lottery fraud",
@@ -114,7 +105,7 @@
         "warning_signs": "",
         "precautions": "Beware of such unbelievable lottery or offers - nobody gives free money, especially such huge amounts of money. Do not make payments or share secure credentials in response to any lottery calls / emails. RBI never opens accounts of members of public or takes deposits from them. Such messages are fraudulent. RBI never asks for personal / bank details of members of public. Beware of fake RBI logos and messages. Never respond to messages offering / promising prize money, government aid and Know Your Customer (KYC) updation to receive prize money from banks, institutions etc.",
         "source_url": "https://rbidocs.rbi.org.in/rdocs/content/pdfs/BEAWARE07032022.pdf",
-        "id": 13
+        "id": 12
     },
     {
         "fraud_name": "Online job fraud",
@@ -123,7 +114,7 @@
         "warning_signs": "",
         "precautions": "For any job offer, including from overseas entities, first confirm the identity and contact details of the employing company / its representative. Always remember that a genuine company offering a job will never ask for money for offering the job. Do not make payments on unknown job search websites.",
         "source_url": "https://rbidocs.rbi.org.in/rdocs/content/pdfs/BEAWARE07032022.pdf",
-        "id": 14
+        "id": 13
     },
     {
         "fraud_name": "Money mules",
@@ -132,7 +123,7 @@
         "warning_signs": "",
         "precautions": "Do not allow others to use your account to receive or transfer money for a fee / payment. Do not respond to emails asking for your bank account details. Do not get carried away by attractive offers / commissions and give consent to receive unauthorised money and to transfer them to others or withdraw cash and give it out for a handsome fee. If the source of funds is not genuine, or the rationale for underlying transaction is not proved to authorities, the receiver of money is likely to land in serious trouble with police and other law enforcement agencies.",
         "source_url": "https://rbidocs.rbi.org.in/rdocs/content/pdfs/BEAWARE07032022.pdf",
-        "id": 15
+        "id": 14
     },
     {
         "fraud_name": "Fake advertisements for extending loans by fraudsters",
@@ -141,7 +132,7 @@
         "warning_signs": "",
         "precautions": "Loan processing fee charged by NBFCs / banks is deducted from the sanctioned loan amount and not demanded upfront in cash from the borrower. Never pay any processing fee in advance as NBFCs / banks will never ask for an advance fee before the processing of loan application. Do not make payments or enter secure credentials against online offer of loans at low interest rates, etc., without check ing / verifying the particulars through genuine sources.",
         "source_url": "https://rbidocs.rbi.org.in/rdocs/content/pdfs/BEAWARE07032022.pdf",
-        "id": 16
+        "id": 15
     },
     {
         "fraud_name": "SMS / Email / Instant Messaging / Call scams",
@@ -150,7 +141,7 @@
         "warning_signs": "",
         "precautions": "Never believe loan offers made by people on their own through telephones / emails, etc. Never make any payment against such offers or share any personal / financial credentials against such offers without cross-checking that it is genuine through other sources. Never click on links sent through SMS / emails or reply to promotional SMS / emails. Never open / respond to emails from unknown sources containing suspicious attachment or phishing links.",
         "source_url": "https://rbidocs.rbi.org.in/rdocs/content/pdfs/BEAWARE07032022.pdf",
-        "id": 17
+        "id": 16
     },
     {
         "fraud_name": "OTP based Frauds",
@@ -159,7 +150,7 @@
         "warning_signs": "",
         "precautions": "Never share OTP / PIN / personal details, etc., in any form with anyone , including your own friends and family members. Regularly check SMS / emails to ensure that no OTP is generated without your prior knowledge. Always access the official website of bank / NBFC / e-wallet provider or contact the branch to avail their services and / or seek product and services related information and clarifications.",
         "source_url": "https://rbidocs.rbi.org.in/rdocs/content/pdfs/BEAWARE07032022.pdf",
-        "id": 18
+        "id": 17
     },
     {
         "fraud_name": "Fake loan websites / App frauds",
@@ -168,7 +159,7 @@
         "warning_signs": "",
         "precautions": "Verify if the lender is registered with the Government / Regulator /authorised agencies Check whether the lender has provided a physical address or contact information to ensure it is not difficult to contact them later. Beware if the lender appears more interested in obtaining personal details rather than in checking credit scores . Remember that any reputed NBFC / bank will never ask for payment before processing the loan application. Genuine loan providers never offer money without verifying documents and other credentials of the borrowers. Verify if these NBFC-backed loan apps are genuine.",
         "source_url": "https://rbidocs.rbi.org.in/rdocs/content/pdfs/BEAWARE07032022.pdf",
-        "id": 19
+        "id": 18
     },
     {
         "fraud_name": "Money circulation / Ponzi / Multi-Level Marketing (MLM)",
@@ -177,7 +168,7 @@
         "warning_signs": "",
         "precautions": "Returns are proportional to risks. Higher the return, higher is the risk. Any scheme offering abnormally high returns (40-50% p a) consistently, could be the first sign of a potential fraud and caution needs to be exercised. Always notice that any payment / commission / bonus / percentage of profit without the actual sale of goods / service is suspicious and may lead to a fraud. Do not be tempted by promises of high returns offered by entities running Multi -Level Marketing / Chain Marketing / Pyramid Structure schemes. Acceptance of money under Money Circulation / Multi -level Marketing / Pyramid structures is a cognizable offence under the Prize Chits and Money Circulation Schemes (Banning) Act, 1978. In case of such offers or information of such schemes, a complaint must be immediately lodged with the State Police.",
         "source_url": "https://rbidocs.rbi.org.in/rdocs/content/pdfs/BEAWARE07032022.pdf",
-        "id": 20
+        "id": 19
     },
     {
         "fraud_name": "Fraudulent loans with forged documents",
@@ -186,6 +177,6 @@
         "warning_signs": "",
         "precautions": "Exercise due care and vigilance while providing KYC and other personal documents, including the National Automated Clearing House (NACH) form for loan sanction / availing of credit facility from any entity, especially individuals posing to be representatives of these entities. Such documents should be shared only with the entity’s authorised personnel or on authorised email IDs of the entities. Follow up with the concerned entities to ensure that the documents shared by you are purged immediately by them in case of non-sanction of loan and/ or post closure of the loan account.",
         "source_url": "https://rbidocs.rbi.org.in/rdocs/content/pdfs/BEAWARE07032022.pdf",
-        "id": 21
+        "id": 20
     }
 ]

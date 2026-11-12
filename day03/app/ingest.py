@@ -49,6 +49,8 @@ def guess_channel(name):
 def make_record(part):
     lines = part.strip().split("\n")
     name = clean(re.sub(r"^\d+\s*\.?\s*", "", lines[0]))
+    if not re.match(r"^\d{1,2}\s*\.\s*\S", lines[0]):
+        raise ValueError("not a numbered heading")
     body = re.sub(FOOTER, " ", "\n".join(lines[1:]))
 
     start = re.search(r"modus\s+operandi", body, re.IGNORECASE)
@@ -83,7 +85,7 @@ with open(TEXT_FILE, "w", encoding="utf-8") as f:
     f.write(text)
 
 records = []
-for part in re.split(r"\n(?=\d{1,2}\s*\.?\s+[A-Z])", text):
+for part in re.split(r"\n(?=\d{1,2}\.\s+[A-Z])", text):
     try:
         records.append(make_record(part))
     except ValueError as error:
