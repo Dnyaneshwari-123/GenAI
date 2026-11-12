@@ -9,6 +9,7 @@ class Record:
     warning_signs: str
     precautions: str
     source_url: str
+    id: int = 0
 
     def to_dict(self):
         return asdict(self)
