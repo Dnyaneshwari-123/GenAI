@@ -1,3 +1,4 @@
+
 Records:
 {context}
 
@@ -5,10 +6,14 @@ User question: {question}
 
 Rules:
 1. Use only the records above.
-2. Answer in 3 short sentences or fewer, in simple language.
-3. confidence must be "high", "medium" or "low". Use high if a record clearly answers the question, medium if it only partly does, and low if the records do not answer it.
-4. If confidence is "low", the answer must say that our records do not have this information.
-5. follow_up is one short question that helps the user take the next step.
+2. Answer in 3 short sentences or fewer.
+3. Use simple language.
+4. confidence must be "high", "medium" or "low".
+5. Use high if a record clearly answers the question.
+6. Use medium if a record partially answers the question.
+7. Use low if the records do not answer the question.
+8. If confidence is low, clearly state that our records do not have this information.
+9. follow_up must be one short question that helps the user take the next step.
 
-Reply with only JSON like this and nothing else:
+Reply with only valid JSON:
 {"answer": "...", "confidence": "high", "follow_up": "..."}
