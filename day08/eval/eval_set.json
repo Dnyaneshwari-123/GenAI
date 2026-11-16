@@ -1,0 +1,17 @@
+[
+  {"id": 1, "question": "What are the warning signs of a SIM-swap scam?", "answerable": true, "keywords": ["duplicate sim", "mobile network"]},
+  {"id": 2, "question": "How can I identify a fake customer-care number?", "answerable": true, "keywords": ["customer care", "search engine"]},
+  {"id": 3, "question": "What should I do if someone asks me to install a screen-sharing app?", "answerable": true, "keywords": ["screen sharing"]},
+  {"id": 4, "question": "What precautions should I take before scanning a QR code?", "answerable": true, "keywords": ["qr code"]},
+  {"id": 5, "question": "Why should I never share my OTP with a caller who says he is from my bank?", "answerable": true, "keywords": ["cvv", "imposters"]},
+  {"id": 6, "question": "How does ATM card skimming work?", "answerable": true, "keywords": ["skimming"]},
+  {"id": 7, "question": "What is a money mule?", "answerable": true, "keywords": ["money mule"]},
+  {"id": 8, "question": "What should I check on a website before entering my bank details?", "answerable": true, "keywords": ["padlock", "https"]},
+  {"id": 9, "question": "A buyer asked me to enter my UPI PIN to receive money. Is that safe?", "answerable": true, "keywords": ["receive money"]},
+  {"id": 10, "question": "How do fraudsters impersonate my friends on social media?", "answerable": true, "keywords": ["impersonation on social media", "fake account"]},
+  {"id": 11, "question": "How can I tell if a loan app is fake?", "answerable": true, "keywords": ["loan apps", "limited period"]},
+  {"id": 12, "question": "Should I pay a processing fee in advance to get a loan?", "answerable": true, "keywords": ["processing fee"]},
+  {"id": 13, "question": "Has my bank refunded the money I lost in a UPI fraud?", "answerable": false, "keywords": []},
+  {"id": 14, "question": "Which section of the IT Act 2000 applies to hacking?", "answerable": false, "keywords": []},
+  {"id": 15, "question": "Which credit card gives the best travel rewards?", "answerable": false, "keywords": []}
+]
