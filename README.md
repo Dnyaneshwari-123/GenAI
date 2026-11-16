@@ -20,7 +20,4 @@ People don't know which law applies, where to report, or how fast to act. Becaus
 - `day01_intro.py`: prints the project card and asks for the user's name and question
 - `day01_menu.py`: menu with about, sample questions, a rule check and exit
 
-Day 6: cd day06
-Copy .env.example to .env and put your own Groq key in it
-uvicorn app.main:app --reload
-Open http://127.0.0.1:8000/docs and try POST /chat
+Security note: a Gemini key was committed by mistake in .env.example and was revoked on 16 Nov 2026. Real keys now live only in .env, which is gitignored.
