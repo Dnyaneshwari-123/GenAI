@@ -28,3 +28,17 @@ The only difference was Q5 (“Why should I never share my OTP with a caller who
 Both configs answered all three out-of-scope questions (Q13 to Q15) with “I don’t know” and cited sources for every answerable question. Smaller chunks plus a larger top-k improved coverage on this booklet, where each fraud type has a short, self-contained section. The trade-off is that top-k 5 passes more text to the LLM, which raises cost and the chance of noisy context.
 
 Limitations: the eval is only 15 questions, retrieval is judged by keyword matching, and the winner is chosen by pass count, then retrieval hits, then smaller top-k.
+## Day 10: Streamlit UI and Scam X-ray
+cd day10
+uvicorn app.main:app --reload        (terminal 1: the API)
+streamlit run ui/app.py              (terminal 2: the UI)
+python -m pytest tests -q            (19 tests)
+
+![Scam X-ray](day10/docs/xray.png)
+![Chat with citations](day10/docs/chat.png)
+![I don't know for Q6](day10/docs/idk.png)
+
+- Chat calls POST /ask or POST /agent, shows page-linked citations and saves 👍/👎 to data/feedback.jsonl.
+- Scam X-ray runs locally: risk score, risky phrases in red (OTP, KYC, urgent, link, prize), the matched fraud pattern from the records, and a Call 1930 card when money is already lost.
+- Limits: the X-ray uses fixed regex rules, so it can miss new scams. Money-lost detection reads first-person phrases such as "I paid" or "was debited", plus a checkbox.
+- Privacy: the X-ray sends nothing to an API. Do not type real personal data in the chat, because questions are saved with the feedback.

@@ -1,0 +1,10 @@
+
+Records:
+{context}
+
+Question: {question}
+
+Answer the question using only the records above.
+
+Reply in JSON with these keys:
+answer, confidence, follow_up.
