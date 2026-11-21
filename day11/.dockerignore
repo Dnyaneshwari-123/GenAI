@@ -1,0 +1,15 @@
+.venv
+.env
+.git
+.gitignore
+__pycache__
+*.pyc
+.pytest_cache
+.ruff_cache
+.mypy_cache
+chroma_db
+tests
+docs
+data/feedback.jsonl
+data/chunks.json
+*.md

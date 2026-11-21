@@ -42,3 +42,29 @@ python -m pytest tests -q            (19 tests)
 - Scam X-ray runs locally: risk score, risky phrases in red (OTP, KYC, urgent, link, prize), the matched fraud pattern from the records, and a Call 1930 card when money is already lost.
 - Limits: the X-ray uses fixed regex rules, so it can miss new scams. Money-lost detection reads first-person phrases such as "I paid" or "was debited", plus a checkbox.
 - Privacy: the X-ray sends nothing to an API. Do not type real personal data in the chat, because questions are saved with the feedback.
+## Day 11: Tests, linting and Docker
+
+### Run the tests
+    cd day11
+    python -m pip install -r requirements-dev.txt
+    python -m pytest          (63 tests, no API key or internet needed)
+    ruff check .
+    python -m mypy app/tools.py app/records.py ui/xray.py
+
+The tests use a fake vector store and a fake LLM, so they cover the real FastAPI app, the RAG
+class, the scam-score tool and the agent loop without any network call.
+
+### Run with Docker
+Needs Docker Desktop.
+
+    cd day11
+    copy .env.example .env      (then put your own Groq key in .env)
+    docker compose up --build
+
+- UI: http://localhost:8501
+- API docs: http://localhost:8000/docs
+- Stop: Ctrl+C, then `docker compose down`
+
+The first start takes a few minutes (build, then building the vector index). The index is kept
+in a Docker volume, so later starts are fast. Without a key the stack still starts and the
+Scam X-ray works, but the chat cannot answer.
