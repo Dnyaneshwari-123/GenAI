@@ -1,3 +1,4 @@
+[![CI](https://github.com/Dnyaneshwari-123/GenAI/actions/workflows/ci.yml/badge.svg)](https://github.com/Dnyaneshwari-123/GenAI/actions/workflows/ci.yml)
 # CyberSuraksha — Project Card
 
 **Name:** Dnyaneshwari Kale
