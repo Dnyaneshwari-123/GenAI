@@ -1,4 +1,5 @@
 import json
+import os
 from pathlib import Path
 from uuid import uuid4
 
@@ -11,7 +12,6 @@ from app.llm import LLM
 from app.rag import RAG
 from app.records import load_records
 from app.smart_search import SmartSearch
-from app.vectorstore import build_store
 
 app = FastAPI(title="CyberSuraksha API")
 
@@ -22,9 +22,20 @@ CHUNK_SIZE = 600
 CHUNK_OVERLAP = 100
 TOP_K = 3
 
+# LITE_MODE=1 swaps the embedding model for TF-IDF, so the app fits a small free server
+LITE = os.getenv("LITE_MODE") == "1"
+
 records = load_records()
 searcher = SmartSearch(records)
-store = build_store(CHUNK_SIZE, CHUNK_OVERLAP)
+
+if LITE:
+    from app.litestore import build_lite_store
+
+    store = build_lite_store(CHUNK_SIZE, CHUNK_OVERLAP)
+else:
+    from app.vectorstore import build_store
+
+    store = build_store(CHUNK_SIZE, CHUNK_OVERLAP)
 
 try:
     llm = LLM()
@@ -32,7 +43,7 @@ except ValueError as error:
     llm = None
     print("LLM not ready:", error)
 
-rag = RAG(store, llm, top_k=TOP_K) if llm is not None else None
+rag = RAG(store, llm, top_k=TOP_K, max_distance=0.98 if LITE else 1.0) if llm is not None else None
 agent_graph = build_graph(llm, rag) if llm is not None else None
 
 
@@ -120,7 +131,8 @@ def home():
 
 @app.get("/health")
 def health():
-    return {"status": "ok", "records": len(records), "chunks": store.count(), "llm_ready": llm is not None}
+        return {"status": "ok", "mode": "lite" if LITE else "full", "records": len(records),
+            "chunks": store.count(), "llm_ready": llm is not None}
 
 
 @app.get("/records")

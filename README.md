@@ -1,6 +1,8 @@
 [![CI](https://github.com/Dnyaneshwari-123/GenAI/actions/workflows/ci.yml/badge.svg)](https://github.com/Dnyaneshwari-123/GenAI/actions/workflows/ci.yml)
 # CyberSuraksha — Project Card
 
+**Live demo:** https://genai-er7z.onrender.com ([/health](https://genai-er7z.onrender.com/health), [/docs](https://genai-er7z.onrender.com/docs)). Free tier: the first request after inactivity can take about a minute.
+
 **Name:** Dnyaneshwari Kale
 **Project:** SJ-46 · Law (Cyber)
 
@@ -69,3 +71,8 @@ Needs Docker Desktop.
 The first start takes a few minutes (build, then building the vector index). The index is kept
 in a Docker volume, so later starts are fast. Without a key the stack still starts and the
 Scam X-ray works, but the chat cannot answer.
+## Day 12: Deployment
+
+- CI (`.github/workflows/ci.yml`) runs ruff, pytest and a Docker build on every push.
+- The API runs on Render as a Docker service (`day11/app/Dockerfile.render`, lite mode, free plan).
+- Health check: https://genai-er7z.onrender.com/health returns `{"status":"ok","mode":"lite","records":20,"chunks":82,"llm_ready":true}`.
