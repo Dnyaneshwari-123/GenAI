@@ -69,3 +69,17 @@ Needs Docker Desktop.
 The first start takes a few minutes (build, then building the vector index). The index is kept
 in a Docker volume, so later starts are fast. Without a key the stack still starts and the
 Scam X-ray works, but the chat cannot answer.
+
+## Production notes
+
+| Measure | Result |
+|---|---|
+| Median latency, LLM call (p50) | ___ ms |
+| p95 latency | ___ ms |
+| Cache hit latency | ___ ms |
+| Avg tokens per request (prompt / completion) | ___ / ___ |
+| Cache | in-memory, 100 entries, 1 h TTL, reset on restart or sleep |
+| Input limit | 3–500 characters, rejected with 400/422 |
+| Prompt-injection guard | pattern check before the LLM; covered by a test |
+
+Limits: the injection guard is a regex list, so it catches common phrasings but not clever ones. The cache is per instance, so it is lost when the Render free tier spins down.
