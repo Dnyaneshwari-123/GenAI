@@ -1,0 +1,5 @@
+# CyberSuraksha: resume bullets
+
+- Built CyberSuraksha, a RAG-based GenAI assistant (Python, FastAPI, Groq LLM) that answers online-fraud questions from 20 records of the RBI BE(A)WARE booklet (82 chunks) and returns structured JSON with an answer, confidence level, follow-up question and matched records.
+- Evaluated retrieval and prompts on fixed test sets: tuned chunking to raise retrieval checks from 14/15 to 15/15, and moved to a stricter prompt that produced a valid confidence format in 10/10 answers versus 4/10.
+- Shipped it as a Dockerised REST API on Render with GitHub Actions CI (ruff, 66 pytest tests, Docker build); added response caching, input limits, a prompt-injection guard and per-request latency and token logging (median 2.0 s per LLM call, about 21 ms on cache hits, measured locally).
