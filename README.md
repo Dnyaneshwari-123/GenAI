@@ -50,7 +50,7 @@ python -m pytest tests -q            (19 tests)
 ### Run the tests
     cd day11
     python -m pip install -r requirements-dev.txt
-    python -m pytest          (63 tests, no API key or internet needed)
+    python -m pytest          (71 tests, no API key or internet needed)
     ruff check .
     python -m mypy app/tools.py app/records.py ui/xray.py
 
@@ -71,7 +71,22 @@ Needs Docker Desktop.
 The first start takes a few minutes (build, then building the vector index). The index is kept
 in a Docker volume, so later starts are fast. Without a key the stack still starts and the
 Scam X-ray works, but the chat cannot answer.
-<<<<<<< HEAD
+## Architecture
+```mermaid
+flowchart LR
+    U[User] --> UI[Streamlit UI or /docs]
+    UI -->|POST /chat, /ask, /agent| API[FastAPI]
+    API --> G[Input guard: length + injection check]
+    G --> C{Cache hit?}
+    C -- yes --> OUT[Reply]
+    C -- no --> S[Search the fraud records]
+    S --> P[Prompt v2 + matched records]
+    P --> L[Groq LLM]
+    L --> J[JSON: answer, confidence, follow_up, matched]
+    J --> API
+    API --> LOG[Log latency + tokens, /metrics]
+    API --> OUT
+```
 
 ## Production notes
 
@@ -92,10 +107,8 @@ Measured locally with `day11/scripts/bench.py` (10 questions, prompt v2, Groq `o
 - The injection guard is a regex list. It stops common phrasings but not paraphrased attacks.
 - The cache is per instance, so it resets on restart or when the free service sleeps.
 - `/agent` makes several LLM calls per request, so its tokens are not logged.
-=======
 ## Day 12: Deployment
 
 - CI (`.github/workflows/ci.yml`) runs ruff, pytest and a Docker build on every push.
 - The API runs on Render as a Docker service (`day11/app/Dockerfile.render`, lite mode, free plan).
 - Health check: https://genai-er7z.onrender.com/health returns `{"status":"ok","mode":"lite","records":20,"chunks":82,"llm_ready":true}`.
->>>>>>> feature/render-lite
