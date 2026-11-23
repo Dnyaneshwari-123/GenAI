@@ -72,14 +72,20 @@ Scam X-ray works, but the chat cannot answer.
 
 ## Production notes
 
+Measured locally with `day11/scripts/bench.py` (10 questions, prompt v2, Groq `openai/gpt-oss-20b`), then read from `GET /metrics`.
+
 | Measure | Result |
 |---|---|
-| Median latency, LLM call (p50) | ___ ms |
-| p95 latency | ___ ms |
-| Cache hit latency | ___ ms |
-| Avg tokens per request (prompt / completion) | ___ / ___ |
-| Cache | in-memory, 100 entries, 1 h TTL, reset on restart or sleep |
-| Input limit | 3–500 characters, rejected with 400/422 |
-| Prompt-injection guard | pattern check before the LLM; covered by a test |
+| Latency, LLM call (p50 / p95) | 1,973 ms / 2,370 ms |
+| Latency, cache hit (round trip) | about 21 ms |
+| Tokens per request (prompt / completion) | about 839 / 254 |
+| Cache | in-memory, 100 entries, 1 h TTL, only successful replies |
+| Input limits | question 3–500 characters (400/422 otherwise); agent message max 500 |
+| Prompt-injection guard | pattern check before the LLM call, covered by tests |
+| Logging | one JSON line per request: path, latency, tokens, cached, status (question length only, not the text) |
 
-Limits: the injection guard is a regex list, so it catches common phrasings but not clever ones. The cache is per instance, so it is lost when the Render free tier spins down.
+- At about 1,100 tokens per call, the free Groq limit of 8,000 tokens per minute allows only about 7 uncached requests per minute, so the cache and the input limits protect the quota.
+- Only 10 requests were measured, so the p95 is indicative only. Render's free tier adds a cold start of about a minute after inactivity.
+- The injection guard is a regex list. It stops common phrasings but not paraphrased attacks.
+- The cache is per instance, so it resets on restart or when the free service sleeps.
+- `/agent` makes several LLM calls per request, so its tokens are not logged.

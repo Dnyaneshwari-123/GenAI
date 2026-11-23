@@ -1,13 +1,15 @@
 import json
+import time
 from pathlib import Path
 from uuid import uuid4
 
 from fastapi import FastAPI, HTTPException
 from langgraph.types import Command
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 from app.graph import build_graph
 from app.llm import LLM
+from app.prod import SAFE_REFUSAL, TTLCache, check_input, log_request, summary
 from app.rag import RAG
 from app.records import load_records
 from app.smart_search import SmartSearch
@@ -34,19 +36,20 @@ except ValueError as error:
 
 rag = RAG(store, llm, top_k=TOP_K) if llm is not None else None
 agent_graph = build_graph(llm, rag) if llm is not None else None
+cache = TTLCache(max_size=100, ttl=3600)
 
 
 class ChatRequest(BaseModel):
-    question: str
+    question: str = Field(min_length=3, max_length=500)
     prompt_version: str = "v2"
 
 
 class Question(BaseModel):
-    question: str
+    question: str = Field(min_length=3, max_length=500)
 
 
 class AgentRequest(BaseModel):
-    message: str | None = None
+    message: str | None = Field(default=None, max_length=500)
     thread_id: str | None = None
     approve: bool | None = None
 
@@ -113,6 +116,23 @@ def agent_response(result, thread_id):
     }
 
 
+def elapsed_ms(start):
+    return (time.perf_counter() - start) * 1000
+
+
+def usage_of():
+    if llm is not None and hasattr(llm, "last_usage"):
+        return llm.last_usage()
+    return {}
+
+
+def reject(path, text, start, reason):
+    log_request(path, text, elapsed_ms(start), None, False, reason)
+    if reason == "injection":
+        return SAFE_REFUSAL
+    raise HTTPException(status_code=400, detail="Question rejected: " + reason)
+
+
 @app.get("/")
 def home():
     return {"message": "Welcome to CyberSuraksha. Open /docs to try the API."}
@@ -121,6 +141,11 @@ def home():
 @app.get("/health")
 def health():
     return {"status": "ok", "records": len(records), "chunks": store.count(), "llm_ready": llm is not None}
+
+
+@app.get("/metrics")
+def metrics():
+    return summary()
 
 
 @app.get("/records")
@@ -167,18 +192,29 @@ def ask(body: Question):
 @app.post("/ask")
 def ask_rag(body: Question):
 
+    start = time.perf_counter()
+
     if rag is None:
         raise HTTPException(status_code=503, detail="LLM not ready. Check your .env file")
 
+    ok, reason = check_input(body.question)
+    if not ok:
+        return reject("/ask", body.question, start, reason)
+
     try:
-        return rag.ask(body.question)
+        result = rag.ask(body.question)
 
     except RuntimeError as error:
         raise HTTPException(status_code=502, detail="Chat service error: " + str(error)) from error
 
+    log_request("/ask", body.question, elapsed_ms(start), usage_of(), False, "ok")
+    return result
+
 
 @app.post("/agent")
 def agent(body: AgentRequest):
+
+    start = time.perf_counter()
 
     if agent_graph is None:
         raise HTTPException(status_code=503, detail="LLM not ready. Check your .env file")
@@ -197,6 +233,12 @@ def agent(body: AgentRequest):
                 raise HTTPException(status_code=400, detail="message is required")
             if waiting:
                 raise HTTPException(status_code=409, detail="This thread is waiting for approval")
+
+            ok, reason = check_input(body.message)
+            if not ok:
+                log_request("/agent", body.message, elapsed_ms(start), None, False, reason)
+                raise HTTPException(status_code=400, detail="Message rejected: " + reason)
+
             result = agent_graph.invoke({
                 "messages": ["User: " + body.message],
                 "decision": {},
@@ -210,17 +252,30 @@ def agent(body: AgentRequest):
     except RuntimeError as error:
         raise HTTPException(status_code=502, detail="Agent error: " + str(error)) from error
 
+    log_request("/agent", body.message or "", elapsed_ms(start), None, False, "ok")
     return agent_response(result, thread_id)
 
 
 @app.post("/chat")
 def chat(data: ChatRequest):
 
+    start = time.perf_counter()
+
     if llm is None:
         raise HTTPException(status_code=503, detail="LLM not ready. Check your .env file")
 
     if data.prompt_version not in ["v1", "v2"]:
         raise HTTPException(status_code=400, detail="Prompt version must be v1 or v2")
+
+    ok, reason = check_input(data.question)
+    if not ok:
+        return reject("/chat", data.question, start, reason)
+
+    key = cache.key(data.question, data.prompt_version)
+    hit = cache.get(key)
+    if hit is not None:
+        log_request("/chat", data.question, elapsed_ms(start), None, True, "ok")
+        return hit
 
     found = searcher.search(data.question, top_n=3)
     matched = [record["fraud_name"] for record in found]
@@ -247,7 +302,12 @@ def chat(data: ChatRequest):
 
     try:
         reply = llm.ask(system_prompt, user_prompt)
-        return parse_reply(reply, matched)
+        result = parse_reply(reply, matched)
 
     except Exception as error:
+        log_request("/chat", data.question, elapsed_ms(start), None, False, "error")
         raise HTTPException(status_code=502, detail="Chat service error: " + str(error)) from error
+
+    cache.set(key, result)
+    log_request("/chat", data.question, elapsed_ms(start), usage_of(), False, "ok")
+    return result
