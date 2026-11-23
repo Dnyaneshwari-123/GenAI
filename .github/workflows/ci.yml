@@ -18,7 +18,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install test dependencies
-        run: pip install fastapi httpx pydantic python-dotenv requests scikit-learn langgraph streamlit pytest ruff
+        run: pip install fastapi httpx pydantic python-dotenv requests scikit-learn pypdf langgraph streamlit pytest ruff
       - name: Lint with ruff
         run: ruff check .
       - name: Run tests
