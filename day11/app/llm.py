@@ -1,4 +1,5 @@
 import os
+import threading
 
 import requests
 from dotenv import load_dotenv
@@ -26,7 +27,14 @@ class LLM:
         if not self.api_key or not self.model:
             raise ValueError("API key or model is missing")
 
+        self._local = threading.local()
+
+    def last_usage(self):
+        return getattr(self._local, "usage", {})
+
     def ask(self, system_prompt, user_prompt):
+
+        self._local.usage = {}
 
         try:
             if self.provider == "groq":
@@ -34,7 +42,7 @@ class LLM:
             else:
                 return self.ask_gemini(system_prompt, user_prompt)
         except (requests.exceptions.RequestException, KeyError, IndexError) as error:
-                       raise RuntimeError("LLM call failed: " + str(error)) from error
+            raise RuntimeError("LLM call failed: " + str(error)) from error
 
     def ask_groq(self, system_prompt, user_prompt):
 
@@ -63,7 +71,9 @@ class LLM:
                 "Groq error " + str(response.status_code) + ": " + response.text[:300]
             )
 
-        return response.json()["choices"][0]["message"]["content"]
+        body = response.json()
+        self._local.usage = body.get("usage", {})
+        return body["choices"][0]["message"]["content"]
 
     def ask_gemini(self, system_prompt, user_prompt):
 

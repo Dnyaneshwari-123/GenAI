@@ -1,6 +1,8 @@
 [![CI](https://github.com/Dnyaneshwari-123/GenAI/actions/workflows/ci.yml/badge.svg)](https://github.com/Dnyaneshwari-123/GenAI/actions/workflows/ci.yml)
 # CyberSuraksha — Project Card
 
+**Live demo:** https://genai-er7z.onrender.com ([/health](https://genai-er7z.onrender.com/health), [/docs](https://genai-er7z.onrender.com/docs)). Free tier: the first request after inactivity can take about a minute.
+
 **Name:** Dnyaneshwari Kale
 **Project:** SJ-46 · Law (Cyber)
 
@@ -48,7 +50,7 @@ python -m pytest tests -q            (19 tests)
 ### Run the tests
     cd day11
     python -m pip install -r requirements-dev.txt
-    python -m pytest          (63 tests, no API key or internet needed)
+    python -m pytest          (71 tests, no API key or internet needed)
     ruff check .
     python -m mypy app/tools.py app/records.py ui/xray.py
 
@@ -69,3 +71,44 @@ Needs Docker Desktop.
 The first start takes a few minutes (build, then building the vector index). The index is kept
 in a Docker volume, so later starts are fast. Without a key the stack still starts and the
 Scam X-ray works, but the chat cannot answer.
+## Architecture
+```mermaid
+flowchart LR
+    U[User] --> UI[Streamlit UI or /docs]
+    UI -->|POST /chat, /ask, /agent| API[FastAPI]
+    API --> G[Input guard: length + injection check]
+    G --> C{Cache hit?}
+    C -- yes --> OUT[Reply]
+    C -- no --> S[Search the fraud records]
+    S --> P[Prompt v2 + matched records]
+    P --> L[Groq LLM]
+    L --> J[JSON: answer, confidence, follow_up, matched]
+    J --> API
+    API --> LOG[Log latency + tokens, /metrics]
+    API --> OUT
+```
+
+## Production notes
+
+Measured locally with `day11/scripts/bench.py` (10 questions, prompt v2, Groq `openai/gpt-oss-20b`), then read from `GET /metrics`.
+
+| Measure | Result |
+|---|---|
+| Latency, LLM call (p50 / p95) | 1,973 ms / 2,370 ms |
+| Latency, cache hit (round trip) | about 21 ms |
+| Tokens per request (prompt / completion) | about 839 / 254 |
+| Cache | in-memory, 100 entries, 1 h TTL, only successful replies |
+| Input limits | question 3–500 characters (400/422 otherwise); agent message max 500 |
+| Prompt-injection guard | pattern check before the LLM call, covered by tests |
+| Logging | one JSON line per request: path, latency, tokens, cached, status (question length only, not the text) |
+
+- At about 1,100 tokens per call, the free Groq limit of 8,000 tokens per minute allows only about 7 uncached requests per minute, so the cache and the input limits protect the quota.
+- Only 10 requests were measured, so the p95 is indicative only. Render's free tier adds a cold start of about a minute after inactivity.
+- The injection guard is a regex list. It stops common phrasings but not paraphrased attacks.
+- The cache is per instance, so it resets on restart or when the free service sleeps.
+- `/agent` makes several LLM calls per request, so its tokens are not logged.
+## Day 12: Deployment
+
+- CI (`.github/workflows/ci.yml`) runs ruff, pytest and a Docker build on every push.
+- The API runs on Render as a Docker service (`day11/app/Dockerfile.render`, lite mode, free plan).
+- Health check: https://genai-er7z.onrender.com/health returns `{"status":"ok","mode":"lite","records":20,"chunks":82,"llm_ready":true}`.

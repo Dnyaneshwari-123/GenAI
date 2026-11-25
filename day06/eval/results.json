@@ -4,8 +4,8 @@
         "version": "v1",
         "reply": {
             "answer": "The provided records do not contain information on what to do if money is stolen through a fake link.",
-            "confidence": 0.2,
-            "follow_up": "",
+            "confidence": 0.3,
+            "follow_up": "No additional guidance is available in the provided records.",
             "matched": [
                 "Money mules",
                 "SMS / Email / Instant Messaging / Call scams",
@@ -17,9 +17,9 @@
         "id": 2,
         "version": "v1",
         "reply": {
-            "answer": "I don't have information on where to report online harassment.",
-            "confidence": 0.0,
-            "follow_up": "You may want to check official resources or local authorities for guidance.",
+            "answer": "Information not available.",
+            "confidence": 0.2,
+            "follow_up": "Please consult official resources for reporting online harassment.",
             "matched": [
                 "Frauds using online sales platforms",
                 "Impersonation on social media",
@@ -31,9 +31,9 @@
         "id": 3,
         "version": "v1",
         "reply": {
-            "answer": "The provided records do not contain any information about a law that covers hacking.",
+            "answer": "The provided records do not contain information about any law that covers hacking.",
             "confidence": 0.1,
-            "follow_up": "If you have other records or need help finding the relevant law, please share them.",
+            "follow_up": "If you need details about hacking laws, please let me know and I can help you find the relevant information.",
             "matched": [
                 "Money mules"
             ]
@@ -43,9 +43,9 @@
         "id": 4,
         "version": "v1",
         "reply": {
-            "answer": "To spot a fake customer‑care number, always get the number from the bank or company’s official website. Numbers shown directly in search‑engine results are often fake. Also, real customer‑care numbers are usually not mobile numbers; they are landline or dedicated service numbers.",
+            "answer": "To spot a fake customer‑care number, do the following:\n1. Get the number from the bank or company’s official website, not from a search‑engine result.\n2. Check that the number is a landline or a toll‑free number; real customer‑care lines are never mobile numbers.\n3. If you see a mobile number or a number that looks suspicious, do not call it.\n4. If you need to verify a number, call the official toll‑free number listed on the official site and confirm the number you have.",
             "confidence": "high",
-            "follow_up": "If you’re unsure, call the number listed on the official website or use the official toll‑free number to confirm.",
+            "follow_up": "Would you like help finding the official website for your bank or company?",
             "matched": [
                 "Frauds by compromising credentials on results through search engines",
                 "SMS / Email / Instant Messaging / Call scams",
@@ -57,9 +57,9 @@
         "id": 5,
         "version": "v1",
         "reply": {
-            "answer": "If someone asks you to install a screen‑sharing app, do not download it unless you are sure it is from the official company. Only install it when you have been advised by the company’s official toll‑free number that appears on its official website. Before installing, log out of all payment‑related apps on your device. After the work is finished, delete the screen‑sharing app from your device.",
-            "confidence": "high",
-            "follow_up": "If you are unsure whether the request is legitimate, check the company’s official website for the toll‑free number and verify the number before proceeding.",
+            "answer": "If someone asks you to install a screen‑sharing app, do not install it unless you are absolutely sure it is from the official source. Only download such an app if you have confirmed the request through the company’s official toll‑free number listed on its official website. If you do need to install it, first log out of or deactivate all payment‑related apps on your device, and after the work is finished, delete the screen‑sharing app from your device.",
+            "confidence": 0.9,
+            "follow_up": "Would you like help checking whether a phone number is the official toll‑free number of a particular company?",
             "matched": [
                 "Frauds using screen sharing app / Remote access",
                 "ATM card skimming",
@@ -71,9 +71,9 @@
         "id": 6,
         "version": "v1",
         "reply": {
-            "answer": "The records you provided do not contain any information about whether your bank has refunded the money lost in a UPI fraud.",
+            "answer": "The records you provided do not contain any information about whether your bank refunded the money lost in a UPI fraud.",
             "confidence": "low",
-            "follow_up": "You may want to check your bank statement or contact your bank’s customer support to find out if a refund has been processed.",
+            "follow_up": "You may want to contact your bank directly to check the status of any refund.",
             "matched": [
                 "Frauds using online sales platforms",
                 "Money mules",
@@ -85,9 +85,9 @@
         "id": 7,
         "version": "v1",
         "reply": {
-            "answer": "Warning signs of a SIM‑swap scam include: 1) receiving a call or message from someone claiming to be a mobile network staff offering a free upgrade (e.g., 3G to 4G) or extra benefits and asking for your personal or identity details; 2) noticing that your phone suddenly loses mobile network connectivity for an unusually long time in a normal environment.",
-            "confidence": 0.9,
-            "follow_up": "If you see any of these signs, contact your mobile operator immediately to verify your SIM status.",
+            "answer": "Warning signs of a SIM‑swap scam include:\n1. Receiving a call or message from someone claiming to be a mobile‑operator staff offering a free upgrade (e.g., 3G to 4G) or extra benefits and asking you to provide personal or identity details.\n2. Your phone suddenly losing mobile network coverage for an unusually long time in a normal environment, which may indicate a duplicate SIM has been issued.",
+            "confidence": "high",
+            "follow_up": "If you notice any of these signs, contact your mobile operator immediately to verify your SIM status.",
             "matched": [
                 "SIM swap / SIM cloning",
                 "Scam through QR code scan"
@@ -98,9 +98,9 @@
         "id": 8,
         "version": "v1",
         "reply": {
-            "answer": "Be careful when scanning QR codes with any payment app. Only scan codes that you know are safe. Never scan a QR code if it is asking you to receive money, because receiving money does not require a QR code or your PIN/password. Avoid scanning unknown codes and do not enter your PIN or password after scanning.",
-            "confidence": 0.9,
-            "follow_up": "Let me know if you need more help with safe QR code usage.",
+            "answer": "Be cautious while scanning QR codes using any payment app. QR codes have account details embedded in them to transfer money to a particular account. Never scan any QR code to receive money. Transactions involving receipt of money do not require scanning barcodes / QR codes or entering mobile banking PIN (m-PIN), passwords, etc.",
+            "confidence": 0.95,
+            "follow_up": "No further steps needed.",
             "matched": [
                 "Scam through QR code scan"
             ]
@@ -110,9 +110,9 @@
         "id": 9,
         "version": "v1",
         "reply": {
-            "answer": "If you suspect a phishing or UPI fraud, you should immediately inform your local police or the cybercrime branch. They can investigate the incident and take appropriate action.",
-            "confidence": 0.9,
-            "follow_up": "Do you need help finding the contact details for your local police or cybercrime unit?",
+            "answer": "If you suspect a phishing or UPI fraud, you should immediately inform your local police or cybercrime branch. They can investigate the incident and take appropriate action.",
+            "confidence": "high",
+            "follow_up": "Would you like help finding the contact details for your local police or cybercrime office?",
             "matched": [
                 "Frauds using online sales platforms",
                 "Phishing links",
@@ -124,9 +124,9 @@
         "id": 10,
         "version": "v1",
         "reply": {
-            "answer": "The provided records do not contain information about what to do if an online seller takes your payment and then disappears.",
-            "confidence": "low",
-            "follow_up": "You may want to check other reliable sources or contact your bank or local authorities for guidance on such cases.",
+            "answer": "The records do not provide information on what to do if an online seller takes your payment and disappears.",
+            "confidence": 0.9,
+            "follow_up": "No further information available.",
             "matched": [
                 "Frauds using online sales platforms",
                 "Lottery fraud",
@@ -138,9 +138,9 @@
         "id": 1,
         "version": "v2",
         "reply": {
-            "answer": "Our records do not have this information.",
-            "confidence": "low",
-            "follow_up": "Have you reported the incident to your bank?",
+            "answer": "Do not click on the link and do not provide any personal or banking details. Avoid sharing any information with the sender. If you suspect money has been taken, contact your bank immediately for guidance.",
+            "confidence": "medium",
+            "follow_up": "Did you already click the link or share any details?",
             "matched": [
                 "Money mules",
                 "SMS / Email / Instant Messaging / Call scams",
@@ -152,9 +152,9 @@
         "id": 2,
         "version": "v2",
         "reply": {
-            "answer": "Our records do not have information on where to report online harassment.",
+            "answer": "Our records do not have this information.",
             "confidence": "low",
-            "follow_up": "Would you like help finding a local helpline or support service?",
+            "follow_up": "Would you like help finding official channels to report online harassment?",
             "matched": [
                 "Frauds using online sales platforms",
                 "Impersonation on social media",
@@ -166,9 +166,9 @@
         "id": 3,
         "version": "v2",
         "reply": {
-            "answer": "Our records do not contain information about which law covers hacking.",
+            "answer": "Our records do not contain information about a law that covers hacking.",
             "confidence": "low",
-            "follow_up": "Would you like help finding official sources that explain hacking laws in India?",
+            "follow_up": "Would you like help finding official sources or guidance on cybercrime laws in India?",
             "matched": [
                 "Money mules"
             ]
@@ -178,23 +178,37 @@
         "id": 4,
         "version": "v2",
         "reply": {
-            "detail": "Chat service error: Groq error 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m7cggngne9mb74q1htehzz7j` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 6954, Requested 1482. Please try again in 3.27s. Need more tokens? Upgrade to Dev Tier today at https://consol"
+            "answer": "Check the official website of the bank or company for the customer‑care number. Avoid numbers shown directly in search‑engine results, as they may be fake. Real customer‑care numbers are usually not mobile numbers.",
+            "confidence": "high",
+            "follow_up": "Would you like help finding the official website for your bank?",
+            "matched": [
+                "Frauds by compromising credentials on results through search engines",
+                "SMS / Email / Instant Messaging / Call scams",
+                "Frauds using screen sharing app / Remote access"
+            ]
         }
     },
     {
         "id": 5,
         "version": "v2",
         "reply": {
-            "detail": "Chat service error: Groq error 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m7cggngne9mb74q1htehzz7j` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 6583, Requested 1526. Please try again in 817.5ms. Need more tokens? Upgrade to Dev Tier today at https://cons"
+            "answer": "If someone asks you to install a screen‑sharing app, do not install it unless you have confirmed it through the official toll‑free number listed on the company’s website. Log out of all payment apps before installing. Remove the app from your device as soon as the work is finished.",
+            "confidence": "high",
+            "follow_up": "Do you need help verifying a company’s official contact number?",
+            "matched": [
+                "Frauds using screen sharing app / Remote access",
+                "ATM card skimming",
+                "Frauds due to the use of unknown / unverified mobile apps"
+            ]
         }
     },
     {
         "id": 6,
         "version": "v2",
         "reply": {
-            "answer": "Our records do not have this information.",
+            "answer": "Our records do not contain information about whether your bank has refunded the money lost in a UPI fraud.",
             "confidence": "low",
-            "follow_up": "Have you checked with your bank’s customer support about the refund status?",
+            "follow_up": "Have you contacted your bank’s customer support to inquire about a possible refund?",
             "matched": [
                 "Frauds using online sales platforms",
                 "Money mules",
@@ -206,16 +220,22 @@
         "id": 7,
         "version": "v2",
         "reply": {
-            "detail": "Chat service error: Groq error 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m7cggngne9mb74q1htehzz7j` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 6950, Requested 1210. Please try again in 1.2s. Need more tokens? Upgrade to Dev Tier today at https://console"
+            "answer": "If someone calls claiming to be from your mobile operator and asks for personal details or offers a free upgrade, that’s a warning sign. Also, if your phone suddenly loses network for a long time, it could mean a duplicate SIM was issued. Watch out for any unexpected changes in your mobile service.\n",
+            "confidence": "high",
+            "follow_up": "Have you noticed any of these signs recently?",
+            "matched": [
+                "SIM swap / SIM cloning",
+                "Scam through QR code scan"
+            ]
         }
     },
     {
         "id": 8,
         "version": "v2",
         "reply": {
-            "answer": "Be cautious when scanning QR codes with payment apps. Never scan a QR code to receive money. Transactions that receive money don’t need scanning or a PIN.",
+            "answer": "Be cautious while scanning QR codes using any payment app. Never scan a QR code to receive money. Transactions that receive money do not need scanning or entering a PIN.",
             "confidence": "high",
-            "follow_up": "Would you like help checking if a QR code is safe?",
+            "follow_up": "Would you like help verifying if a QR code is safe?",
             "matched": [
                 "Scam through QR code scan"
             ]
@@ -225,16 +245,23 @@
         "id": 9,
         "version": "v2",
         "reply": {
-            "detail": "Chat service error: Groq error 429: {\"error\":{\"message\":\"Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01m7cggngne9mb74q1htehzz7j` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Used 6791, Requested 1360. Please try again in 1.1325s. Need more tokens? Upgrade to Dev Tier today at https://cons"
+            "answer": "If you suspect a phishing link, contact your local police or cybercrime branch immediately. For UPI fraud, the record does not give a specific reporting step. You can still report the incident to your bank or the police for investigation.",
+            "confidence": "medium",
+            "follow_up": "Would you like help finding your local police or cybercrime office?",
+            "matched": [
+                "Frauds using online sales platforms",
+                "Phishing links",
+                "SMS / Email / Instant Messaging / Call scams"
+            ]
         }
     },
     {
         "id": 10,
         "version": "v2",
         "reply": {
-            "answer": "Our records do not have information on what to do if an online seller takes your payment and disappears.",
+            "answer": "Our records do not have this information.",
             "confidence": "low",
-            "follow_up": "Did you use UPI or another payment method for the transaction?",
+            "follow_up": "Do you have the transaction ID or bank details of the payment?",
             "matched": [
                 "Frauds using online sales platforms",
                 "Lottery fraud",
